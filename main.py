@@ -62,15 +62,15 @@ def calculate_doc_bm(documents: list[str], query: str, query_words_idf: dict[str
 
         docs_info[doc]['bm_score'] = bm_score
 
-def main(query: str = "hello there"):
+def main():
     conf = load_config()
 
     documents = list(list_documents(conf["directory"], conf["file_types"]))
 
-    docs_info, avg_doc_len = collect_basic_docs_info(query, documents)
-    query_words_idf = calculate_words_idf(query, documents, docs_info)
+    docs_info, avg_doc_len = collect_basic_docs_info(conf["query"], documents)
+    query_words_idf = calculate_words_idf(conf["query"], documents, docs_info)
 
-    calculate_doc_bm(documents, query, query_words_idf, docs_info, avg_doc_len)
+    calculate_doc_bm(documents, conf["query"], query_words_idf, docs_info, avg_doc_len)
 
     print(json.dumps(docs_info, indent=4))
 

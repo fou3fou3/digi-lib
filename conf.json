@@ -1,5 +1,5 @@
 {
-  "directory": "/path/to/documents_folder",
+  "directory": "/path/to/docs/",
   "file_types": ["txt"],
-  "query": "hello there"
+  "query": "hello world"
 }
