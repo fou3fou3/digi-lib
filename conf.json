@@ -1,0 +1,5 @@
+{
+  "directory": "/path/to/documents_folder",
+  "file_types": ["txt"],
+  "query": "hello there"
+}
